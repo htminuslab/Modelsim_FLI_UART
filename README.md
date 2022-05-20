@@ -2,7 +2,7 @@
 
 ![Image showing Modelsim FI UART interface](modelsim_fli_uart.png "Modelsim FLI UART")
 
-There are occasions where it is easier to connect a running simulation to a real hardware serial port. Examples are PC application such as bootstrap loaders, serial monitor/controllers, GUI etc connected to a simulated Processor+UART. Duplicating those processes in a testbench is time consuming.
+There are occasions when it is easier to connect a running simulation to a real hardware serial port. Examples are PC application such as bootstrap loaders, serial monitor/controllers, GUI etc connected to a simulated Processor+UART. Duplicating those processes in a testbench is time consuming.
 
 This repository shows an example how one can connect a running simulation to a real serial port via the **Foreign Language Interface** (FLI).
 
