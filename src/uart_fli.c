@@ -100,8 +100,8 @@ void cif_init(mtiRegionIdT region, char *param, mtiInterfaceListT *generics, mti
     ip->rd     = mti_CreateDriver(mti_FindPort(ports, "rd"));		// Add drivers    	
     ip->wr     = mti_CreateDriver(mti_FindPort(ports, "wr"));	
 	
-	ip->txreg 	 = mti_FindPort(ports, "txreg");	
-	txdrvid 		 = mti_CreateDriver(ip->txreg);						
+	ip->txreg  = mti_FindPort(ports, "txreg");	
+	txdrvid    = mti_CreateDriver(ip->txreg);						
 	ip->txreg_elems = mti_GetDriverSubelements(txdrvid, 0);
 	
 	                        

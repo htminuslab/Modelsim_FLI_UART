@@ -79,6 +79,22 @@ The Modelsim/Questa batch mode (vsim -batch, no GUI) gives the fastest simulatio
 
 An overrun detection can be added in hardware if required. A possible solution would be to combine the receiving VHDL UART's RDRF (Receive Data Register Full) signal together with a buffer full signal (bufptr==RXBUFFER) and detecting new receive characters pending (src\comport.c poll_comport())
 
+You may get spurious received zeros if the com0com comport is disabled as shown below:
+```
+# Loading TPCLIB.uart2uart(struct)
+# Loading TPCLIB.uart_fli(rtl)
+# Loading ./uart_fli.dll
+# Starting FLI
+# unable to open comport
+# 
+# \\.\COM3 opened at 9600 N,8,1,0
+# Loading D:/modelsim/ModelSim_64Bit.dll
+run -all
+# ** Note: Memory has been initialised with init_rom.mem
+#    Time: 10 ns  Iteration: 1  Instance: /tpcnode_tb/U_DUT/U_FLASH
+# Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 Rx:00 
+```
+
 ## License
 
 See the LICENSE file for details.
